@@ -1,6 +1,7 @@
 $cell-size: 64px;
 $black-cell-color: deepskyblue;
 $white-cell-color: #eed4ac;
+$figure-size: 48px;
 
 
 body {
@@ -26,8 +27,8 @@ body {
 }
 
 .board {
-  width: calc($cell-size * 8);
-  height: calc($cell-size * 8);
+  width: calc(#{$cell-size} * 8);
+  height: calc(#{$cell-size} * 8);
   display: flex;
   flex-wrap: wrap;
 }
@@ -38,4 +39,29 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  img {
+    width: $figure-size;
+    height: $figure-size;
+    position: relative;
+  }
+}
+
+.black {
+  background-color: $black-cell-color;
+}
+
+.white {
+  background-color: $white-cell-color;
+}
+
+.selected {
+  background-color: brown;
+}
+
+.avalible {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: greenyellow;
 }

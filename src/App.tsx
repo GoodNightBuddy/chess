@@ -1,12 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from 'react';
+import './App.scss';
+import BoardComponent from './components/BoardComponent';
+import { Board } from './models/Board';
 
 function App() {
+
+  const [board, setBoard] = useState(new Board());
+
+  useEffect(() => restart(), []);
+
+  function restart() {
+    const board = new Board();
+    board.initCells();
+    board.addFigures()
+    setBoard(board);
+  }
+
   return (
     <div className="app">
-      Hello Kitty
-
+     <BoardComponent board={board} setBoard={setBoard}/>
     </div>
   );
 }
