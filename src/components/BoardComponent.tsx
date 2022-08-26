@@ -46,7 +46,7 @@ const BoardComponent: React.FC<IBoardProps> = ({ board, setBoard, currentPlayer,
   }
 
   return (
-    <div className='col'>
+    <div className='col h-75 d-flex flex-column justify-content-between'>
       
         {currentPlayer ? <h3 className="alert alert-primary fs-5 text-center " role="alert">Current Player: {currentPlayer?.color}</h3> : null}
         <div className='board rounded'>

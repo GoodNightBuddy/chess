@@ -98,12 +98,14 @@ export class Cell {
   moveFigure(target: Cell) {
     if (this.figure?.canMoveOn(target)) {
       this.figure.moveFigure(target);
-      target.setFigure(this.figure);
-      this.figure = null;
 
       if(target.figure) {
         this.addLostFigure(target.figure);
       }
+
+      target.setFigure(this.figure);
+      this.figure = null;
+
     };
   };
 }

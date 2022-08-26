@@ -30,7 +30,7 @@ function App() {
   }
 
   return (
-    <div className="app d-flex flex-row justify-content-space-between align-items-center row mw-100 vh-100">
+    <div className="app d-flex flex-row justify-content-space-between align-items-center row vh-100 mx-2">
       <LostFigures title='White figures:' figures={board.lostWhiteFigures} />
       <BoardComponent
         board={board}

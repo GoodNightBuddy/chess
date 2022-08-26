@@ -8,12 +8,14 @@ interface ILostFiguresProps {
 
 const LostFigures: FC<ILostFiguresProps> = ({title, figures}) => {
   return (
-    <div className='col h-75 bg-light rounded'>
-      <h3>{title}</h3>
+    <div className='col h-75 bg-info bg-gradient rounded'>
+      <h3 className='fs-4 text-center'>{title}</h3>
       {figures.map(figure => 
-      <div key={figure.id}>
+      <div
+      className='d-flex flex-row justify-content-between align-items-center mt-1 mb-1'
+      key={figure.id}>
         {figure.name}
-        {figure.logo && <img src={figure.logo} alt={figure.name}/>}
+        {figure.logo && <img className='lost-figure' src={figure.logo} alt={figure.name}/>}
       </div>
       )}
     </div>
