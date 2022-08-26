@@ -12,26 +12,27 @@ const BoardComponent: React.FC<IBoardProps> = ({ board, setBoard }) => {
 
   const [selectedCell, setSelectedCell] = useState<Cell | null>(null)
 
-  useEffect(() => {
-    highLightCells();
-  }, [selectedCell])
-
+ 
   function click(cell: Cell) {
-
     if(selectedCell !== cell && selectedCell?.figure?.canMoveOn(cell)) {
       selectedCell.moveFigure(cell);
       setSelectedCell(null);
-      updateBoard();
-      // return
     } else if (cell.figure) {
       setSelectedCell(cell);
     }
   }
 
+  useEffect(() => {
+    highLightCells();
+  }, [selectedCell])
+  
   
   function highLightCells() {
-    if(!selectedCell) return;
+    if(selectedCell)  {
     board.highLightCells(selectedCell);
+    } else {
+      board.deHighLightCells()
+    }
     updateBoard();
   };
 

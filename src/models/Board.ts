@@ -15,9 +15,9 @@ export class Board {
       const row: Cell[] = [];
       for (let j = 0; j < 8; j++) {
         if ((i + j) % 2 === 0) {
-          row.push(new Cell(this, i, j, Colors.BLACK, null));
+          row.push(new Cell(this, j, i, Colors.BLACK, null));
         } else {
-          row.push(new Cell(this, i, j, Colors.WHITE, null));
+          row.push(new Cell(this, j, i, Colors.WHITE, null));
         }
       }
       this.cells.push(row);
@@ -30,6 +30,14 @@ export class Board {
       for(let j = 0; j < this.cells.length; j++) {
         const target = row[j];
         target.available = !!selectedCell.figure?.canMoveOn(target);
+      }
+    }
+  };
+
+  public deHighLightCells() {
+    for(let i = 0; i < this.cells.length; i++) {
+      for(let j = 0; j < this.cells.length; j++) {
+        this.cells[i][j].available = false;
       }
     }
   };
@@ -63,10 +71,10 @@ export class Board {
   };
 
   private addKnights() {
-    new Knight(Colors.BLACK, this.getCell(2, 0));
-    new Knight(Colors.WHITE, this.getCell(2, 7));
-    new Knight(Colors.BLACK, this.getCell(5, 0));
-    new Knight(Colors.WHITE, this.getCell(5, 7));
+    new Knight(Colors.BLACK, this.getCell(1, 0));
+    new Knight(Colors.WHITE, this.getCell(1, 7));
+    new Knight(Colors.BLACK, this.getCell(6, 0));
+    new Knight(Colors.WHITE, this.getCell(6, 7));
   };
 
   private addPawns() {
@@ -77,10 +85,10 @@ export class Board {
   };
 
   private addBishops() {
-    new Bishop(Colors.BLACK, this.getCell(1, 0));
-    new Bishop(Colors.WHITE, this.getCell(1, 7));
-    new Bishop(Colors.BLACK, this.getCell(6, 0));
-    new Bishop(Colors.WHITE, this.getCell(6, 7));
+    new Bishop(Colors.BLACK, this.getCell(2, 0));
+    new Bishop(Colors.WHITE, this.getCell(2, 7));
+    new Bishop(Colors.BLACK, this.getCell(5, 0));
+    new Bishop(Colors.WHITE, this.getCell(5, 7));
   };
 
   public addFigures() {

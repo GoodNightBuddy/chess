@@ -11,4 +11,12 @@ export class King extends Figure {
     this.logo = color === Colors.BLACK ? blackLogo : whiteLogo;
     this.name = FigureNames.KING;
   }
+
+  canMoveOn(target: Cell): boolean {
+    if(!super.canMoveOn(target)) {
+      return false;
+    }
+
+    return true
+  }
 }
