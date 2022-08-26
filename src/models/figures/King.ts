@@ -17,6 +17,22 @@ export class King extends Figure {
       return false;
     }
 
-    return true
+    if(Math.abs(target.x - this.cell.x) > 1 || Math.abs(target.y - this.cell.y) > 1 ) {
+      return false;
+    }
+
+    if(this.cell.isEmptyVertical(target)) {
+      return true;
+    }
+
+    if(this.cell.isEmptyHorizontal(target)) {
+      return true;
+    }
+
+    if(this.cell.isEmptyDiagonal(target)) {
+      return true;
+    }
+
+    return false
   }
 }

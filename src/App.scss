@@ -1,3 +1,4 @@
+@import "~bootstrap/scss/bootstrap";
 $cell-size: 64px;
 $black-cell-color: deepskyblue;
 $white-cell-color: #eed4ac;
@@ -18,13 +19,6 @@ body {
   padding: 0;
 }
 
-.app {
-  width: 100vh;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .board {
   width: calc(#{$cell-size} * 8);
