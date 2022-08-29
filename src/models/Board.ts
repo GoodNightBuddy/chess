@@ -46,10 +46,7 @@ export class Board {
   };
 
   getCopyBoard(): Board {
-    const newBoard = new Board();
-    newBoard.cells = this.cells;
-    newBoard.lostBlackFigures = this.lostBlackFigures;
-    newBoard.lostWhiteFigures = this.lostWhiteFigures;
+    const newBoard = Object.defineProperties(new Board(), Object.getOwnPropertyDescriptors(this))
     return newBoard;
   };
 

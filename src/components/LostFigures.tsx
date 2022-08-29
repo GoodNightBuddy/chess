@@ -8,7 +8,7 @@ interface ILostFiguresProps {
 
 const LostFigures: FC<ILostFiguresProps> = ({title, figures}) => {
   return (
-    <div className='col h-75 bg-info bg-gradient rounded'>
+    <div className='col h-100 bg-info bg-gradient rounded'>
       <h3 className='fs-4 text-center'>{title}</h3>
       {figures.map(figure => 
       <div
