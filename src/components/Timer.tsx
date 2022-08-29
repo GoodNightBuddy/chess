@@ -58,7 +58,7 @@ const Timer: FC<ITimerProps> = ({ currentPlayer, restart }) => {
   };
 
   return (
-    <div className="d-flex flex-row justify-content-between align-items-center w-100 px-3 mb-2 row">
+    <div className="d-flex flex-row justify-content-between align-items-center w-100 mb-2 row"style={{maxWidth: '870px'}}>
       <div className="col-4">
         <h2>Black - {blackTime}</h2>
       </div>
